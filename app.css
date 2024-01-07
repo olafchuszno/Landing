@@ -6,6 +6,19 @@
     background-color: #DDDBCB;
 }
 
+.bg-myDarkBone {
+    background-color: #A2A197;
+}
+
 .bg-lace {
     background-color: #F5F1E3;
 }
+
+.text-myBone {
+    color: #DDDBCB;
+}
+
+.text-myDarkBone {
+    color: #A2A197;
+}
+
