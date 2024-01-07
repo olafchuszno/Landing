@@ -1,9 +1,10 @@
 const myInput = document.getElementById("myInput");
 const submitButton = document.getElementById("submitButton");
 const taskList = document.getElementById("taskList");
+const activeTasksDisplay = document.getElementById("activeTasks");
 
 const liClasses =
-  "px-2 py-1 text-center text-xl bg-myLace rounded-2xl mt-4 hover:bg-amber-800";
+  "px-2 py-2 text-center text-xl bg-myLace rounded-2xl mt-4 hover:bg-green-500 task";
 
 let taskCounter = 0;
 let failedAttempts = 0;
@@ -15,7 +16,7 @@ myInput.addEventListener("keypress", (e) => {
     // Add a new task if there is a content content
     if (myInput.value !== "") {
       // Increment task counter
-      taskCounter++;
+      incrementTaskCounter();
 
       addLi(myInput.value, taskCounter);
     } else {
@@ -38,6 +39,14 @@ submitButton.addEventListener("click", () => {
   console.log("submited");
 });
 
+// Listen for task clicks
+taskList.addEventListener("click", (e) => {
+  if (e.target.classList.contains("task")) {
+    e.target.remove();
+    decrementTaskCounter();
+  }
+});
+
 function addLi(content, taskCounter) {
   const newLi = document.createElement("li");
   newLi.innerHTML = content;
@@ -50,4 +59,12 @@ function addLi(content, taskCounter) {
   taskList.appendChild(newLi);
 }
 
-// Add p-4 to the ul if the task count is > 0
+function incrementTaskCounter() {
+  taskCounter++;
+  activeTasksDisplay.innerHTML = taskCounter;
+}
+
+function decrementTaskCounter() {
+  taskCounter--;
+  activeTasksDisplay.innerHTML = taskCounter;
+}
