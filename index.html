@@ -7,12 +7,14 @@
     <link href="https://unpkg.com/tailwindcss@^2.2/dist/tailwind.min.css" rel="stylesheet">
     <link href="./app.css" rel="stylesheet">
     <title>Document</title>
-
 </head>
 
+
+
 <body class="bg-white switchableBg">
-    <section>
-        <nav class="bg-myBone p-4">
+
+    <header>
+        <nav class="bg-myDarkBone p-3">
             <div class="flex justify-evenly items-center">
                 <a href="https://github.com/olafchuszno" class="flex items-center gap-1 py-2 px-4 rounded-3xl hover:bg-gray-300">
                     <img class="h-6 bg-gray-400 rounded-full" alt="github logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg" />
@@ -23,19 +25,21 @@
                 <a class="text-xl font-bold py-2 px-4 rounded-3xl hover:bg-gray-300" href="./contact.html">
                     Contact
                 </a>
+                <button id="viewMode" class="text-xl font-bold py-2 px-4 rounded-3xl hover:bg-gray-300">
+                    View mode
+                </button>
             </div>
         </nav>
-    </section>
+    </header>
 
-    <section>
+    <main>
         <div>
             <a href="./todo.html">Todoapp project</a>
         </div>
-    </section>
+    </main>
 
-    <script src="index.js">
-
-    </script>
+    <script src="index.js"></script>
 </body>
+
 
 </html>
