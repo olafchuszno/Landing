@@ -8,6 +8,7 @@ const liClasses =
   "px-4 py-2 text-center text-xl bg-myLace rounded-2xl mt-4 hover:bg-green-500 task";
 
 let taskCounter = 0;
+let completedTasks = 0;
 let failedAttempts = 0;
 
 //
@@ -22,11 +23,12 @@ addTaskButton.addEventListener("click", () => {
   handleNewTask();
 });
 
-// Listen for task clicks
+// Listen for task clicks (and delete them)
 taskList.addEventListener("click", (e) => {
   if (e.target.classList.contains("task")) {
     e.target.remove();
     decrementTaskCounter();
+    updateCompletedTasks();
   }
 });
 
@@ -35,14 +37,10 @@ clearButton.addEventListener("click", () => {
   resetTaskCounter();
 });
 
-function addLi(content, taskCounter) {
+function addLi(content) {
   const newLi = document.createElement("li");
   newLi.innerHTML = content;
   newLi.classList = liClasses;
-
-  if (taskCounter === 1) {
-    newLi.classList.toggle("mt-4");
-  }
 
   taskList.appendChild(newLi);
 }
@@ -53,8 +51,8 @@ function handleNewTask() {
     // Increment task counter
     incrementTaskCounter();
 
-    // Create the element and add it to the DOM with appropriate classes
-    addLi(myInput.value, taskCounter);
+    // Create the element and add it to the DOM
+    addLi(myInput.value);
   } else {
     // If the user has done it more than one time display the proper message
     if (failedAttempts > 1) {
@@ -84,4 +82,9 @@ function decrementTaskCounter() {
 function resetTaskCounter() {
   taskCounter = 0;
   activeTasksDisplay.innerHTML = taskCounter;
+}
+
+function updateCompletedTasks() {
+  completedTasks++;
+  completedTasksCounter.innerHTML = completedTasks;
 }
