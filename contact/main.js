@@ -3,6 +3,13 @@ const main = document.getElementById("main");
 const viewMode = document.getElementById("viewMode");
 const contactMessage = document.getElementById("contactMessage");
 
+// Get the url and parsed url
+const url = new URL(window.location.href);
+const parsedUrl = url.pathname;
+
+// Show the active link(current site) by the parsed url
+document.getElementById(parsedUrl).classList.toggle("bg-gray-300");
+
 viewMode.addEventListener("click", function () {
   body.classList.toggle("bg-black");
   body.classList.toggle("bg-white");
