@@ -13,6 +13,7 @@ if (parsedUrl == "/index.html" || "/contact/index.html") {
   contactPageLink.id = "/contact/index.html";
 }
 
+// Test the url
 console.log(parsedUrl);
 
 // Show the active link(current site) by the parsed url
