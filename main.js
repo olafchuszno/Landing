@@ -3,9 +3,7 @@ const viewMode = document.getElementById("viewMode");
 const main = document.getElementById("main");
 const descriptions = document.querySelectorAll("p");
 
-const mainPageLink = document.querySelector(".mainPageLink");
-const contactPageLink = document.querySelector(".contactPageLink");
-
+// Get the url and parsed url
 const url = new URL(window.location.href);
 const parsedUrl = url.pathname;
 
@@ -14,6 +12,10 @@ if (parsedUrl == "/index.html" || "/contact/index.html") {
   mainPageLink.id = "/index.html";
   contactPageLink.id = "/contact/index.html";
 }
+
+console.log(parsedUrl);
+
+// Show the active link(current site) by the parsed url
 document.getElementById(parsedUrl).classList.toggle("bg-gray-300");
 
 viewMode.addEventListener("click", function () {
