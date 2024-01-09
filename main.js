@@ -3,6 +3,9 @@ const viewMode = document.getElementById("viewMode");
 const main = document.getElementById("main");
 const descriptions = document.querySelectorAll("p");
 
+const contactPageLink = document.querySelector(".contactPageLink");
+const mainPageLink = document.querySelector(".mainPageLink");
+
 // Get the url and parsed url
 const url = new URL(window.location.href);
 const parsedUrl = url.pathname;
