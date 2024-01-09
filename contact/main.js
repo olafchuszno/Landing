@@ -12,6 +12,7 @@ const parsedUrl = url.pathname;
 
 // Make active tab work on local machine
 if (parsedUrl == "/index.html" || "/contact/index.html") {
+  console.log('url is "/index.html" or "/contact/index.html"');
   mainPageLink.id = "/index.html";
   contactPageLink.id = "/contact/index.html";
 }
