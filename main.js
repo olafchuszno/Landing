@@ -29,4 +29,11 @@ viewMode.addEventListener("click", function () {
   descriptions.forEach((descriptions) => {
     descriptions.classList.toggle("text-myBone");
   });
+
+  // Change button name to Light/Dark
+  if (viewMode.innerHTML === "Light mode 🌕") {
+    viewMode.innerHTML = "Dark mode ☾";
+  } else {
+    viewMode.innerHTML = "Light mode 🌕";
+  }
 });
