@@ -2,6 +2,10 @@ const body = document.querySelector("body");
 const viewMode = document.getElementById("viewMode");
 const main = document.getElementById("main");
 const descriptions = document.querySelectorAll(".projectDescription");
+const changeBackgroundWithViewMode = document.querySelectorAll(
+  ".changeBackgroundWithViewMode"
+);
+
 // Get all the links with active functionality
 const contactPageLink = document.querySelector(".contactPageLink");
 const mainPageLink = document.querySelector(".mainPageLink");
@@ -26,8 +30,15 @@ viewMode.addEventListener("click", function () {
   body.classList.toggle("bg-black");
   body.classList.toggle("bg-white");
 
+  // Change text color of project descriptions
   descriptions.forEach((descriptions) => {
     descriptions.classList.toggle("text-myBone");
+  });
+
+  // Change background of elements
+  changeBackgroundWithViewMode.forEach((element) => {
+    element.classList.toggle("bg-myBone");
+    element.classList.toggle("bg-myLace");
   });
 
   // Change button name to Light/Dark
