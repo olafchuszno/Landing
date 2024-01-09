@@ -2,6 +2,7 @@ const body = document.querySelector("body");
 const main = document.getElementById("main");
 const viewMode = document.getElementById("viewMode");
 const contactMessage = document.getElementById("contactMessage");
+const contactMessageText = document.getElementById("contactMessageText");
 
 const contactPageLink = document.querySelector(".contactPageLink");
 const mainPageLink = document.querySelector(".mainPageLink");
@@ -22,6 +23,8 @@ console.log(parsedUrl);
 // Show the active link(current site) by the parsed url
 document.getElementById(parsedUrl).classList.toggle("bg-gray-300");
 
+let timesViewModeClicked = 0;
+
 viewMode.addEventListener("click", function () {
   body.classList.toggle("bg-black");
   body.classList.toggle("bg-white");
@@ -31,8 +34,10 @@ viewMode.addEventListener("click", function () {
   // Change button name to Light/Dark
   if (viewMode.innerHTML === "Light mode 🌕") {
     viewMode.innerHTML = "Dark mode ☾";
+    contactMessageText.innerHTML = "Feel free to contact me anytime";
   } else {
     viewMode.innerHTML = "Light mode 🌕";
+    contactMessageText.innerHTML = "Day and night";
   }
 });
 
