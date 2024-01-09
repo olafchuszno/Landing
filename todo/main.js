@@ -105,7 +105,10 @@ function incrementTaskCounter() {
   taskCounter++;
   activeTasksDisplay.innerHTML = taskCounter;
   if (taskCounter > 3) {
-    alert("Consider grouping your tasks. Simply click on the group button!");
+    // If the tasks aren't grouped together already, display a guiding message
+    if (!taskList.classList.contains("flex")) {
+      alert("Consider grouping your tasks. Simply click on the group button!");
+    }
     groupButton.classList.toggle("bg-green-500");
   }
 }
