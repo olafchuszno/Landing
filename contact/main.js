@@ -7,6 +7,8 @@ const contactMessage = document.getElementById("contactMessage");
 const url = new URL(window.location.href);
 const parsedUrl = url.pathname;
 
+console.log(parsedUrl);
+
 // Show the active link(current site) by the parsed url
 document.getElementById(parsedUrl).classList.toggle("bg-gray-300");
 
