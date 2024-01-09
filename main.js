@@ -1,8 +1,8 @@
 const body = document.querySelector("body");
 const viewMode = document.getElementById("viewMode");
 const main = document.getElementById("main");
-const descriptions = document.querySelectorAll("p");
-
+const descriptions = document.querySelectorAll(".projectDescription");
+// Get all the links with active functionality
 const contactPageLink = document.querySelector(".contactPageLink");
 const mainPageLink = document.querySelector(".mainPageLink");
 
@@ -26,6 +26,7 @@ viewMode.addEventListener("click", function () {
   body.classList.toggle("bg-black");
   body.classList.toggle("bg-white");
 
-  descriptions.classList.toggle("text-myBone");
-  descriptions.classList.toggle("");
+  descriptions.forEach((descriptions) => {
+    descriptions.classList.toggle("text-myBone");
+  });
 });
