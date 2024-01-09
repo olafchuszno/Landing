@@ -11,7 +11,7 @@ const url = new URL(window.location.href);
 const parsedUrl = url.pathname;
 
 // Make active tab work on local machine
-if (parsedUrl == "/index.html" || "/contact/index.html") {
+if (parsedUrl == "/index.html" || parsedUrl === "/contact/index.html") {
   mainPageLink.id = "/index.html";
   contactPageLink.id = "/contact/index.html";
 }
