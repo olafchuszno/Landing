@@ -29,10 +29,10 @@ viewMode.addEventListener("click", function () {
   main.classList.toggle("text-myBone");
 
   // Change button name to Light/Dark
-  if (viewMode.innerHTML === "Dark mode") {
-    viewMode.innerHTML = "Light mode";
+  if (viewMode.innerHTML === "Light mode 🌕") {
+    viewMode.innerHTML = "Dark mode ☾";
   } else {
-    viewMode.innerHTML = "Dark mode";
+    viewMode.innerHTML = "Light mode 🌕";
   }
 });
 
