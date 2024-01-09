@@ -108,8 +108,10 @@ function incrementTaskCounter() {
     // If the tasks aren't grouped together already, display a guiding message
     if (!taskList.classList.contains("flex")) {
       alert("Consider grouping your tasks. Simply click on the group button!");
+      if (!groupButton.classList.contains("bg-green-500")) {
+        groupButton.classList.toggle("bg-green-500");
+      }
     }
-    groupButton.classList.toggle("bg-green-500");
   }
 }
 
