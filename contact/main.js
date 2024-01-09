@@ -3,9 +3,18 @@ const main = document.getElementById("main");
 const viewMode = document.getElementById("viewMode");
 const contactMessage = document.getElementById("contactMessage");
 
+const contactPageLink = document.querySelector(".contactPageLink");
+const mainPageLink = document.querySelector(".mainPageLink");
+
 // Get the url and parsed url
 const url = new URL(window.location.href);
 const parsedUrl = url.pathname;
+
+// Make active tab work on local machine
+if (parsedUrl == "/index.html" || "/contact/index.html") {
+  mainPageLink.id = "/index.html";
+  contactPageLink.id = "/contact/index.html";
+}
 
 console.log(parsedUrl);
 
